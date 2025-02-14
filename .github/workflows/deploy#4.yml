@@ -16,7 +16,6 @@ permissions:
 
 jobs:
   build:
-    environment: haerang34_blog_env
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -27,6 +26,12 @@ jobs:
           bun-version: latest 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+          UPSTASH_REDIS_REST_URL: ${{ vars.UPSTASH_REDIS_REST_URL}}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
         # with:
           # path: . # The root location of your Astro project inside the repository. (optional)
           # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
