@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   build:
+    environment: haerang34_blog_env
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
