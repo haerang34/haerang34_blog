@@ -17,11 +17,11 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
     site: "https://haerang34.github.io",
     base: "blog",
-	output: "hybrid",
-	adapter: vercel({
-		webAnalytics: { enabled: true },
-		functionPerRoute: false,
-	}),
+	// output: "hybrid",
+	// adapter: vercel({
+	// 	webAnalytics: { enabled: true },
+	// 	functionPerRoute: false,
+	// }),
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		rehypePlugins: [
