@@ -3,28 +3,24 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Kirill So",
+	author: "Haerang34",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "Personal website and blog",
+	title: "Haerang34's Blog",
 	// Meta property used as the default description meta property
 	description:
-		"Product manager, occasional writer and & part-time indie-maker based in Singapore. Exploring, experimenting & learning whilst building tiny products.",
+		"Software Developer, Data Engineer, Cat lover, and something else",
 	// HTML lang property, found in src/layouts/Base.astro L:18
-	lang: "en-GB",
+	lang: "ko-KR",
 	// Meta property, found in src/components/BaseHead.astro L:42
-	ogLocale: "en_GB",
+	ogLocale: "ko-KR",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
-		locale: "en-GB",
+		locale: "ko-KR",
 		options: {
 			day: "numeric",
 			month: "short",
 			year: "numeric",
 		},
-	},
-	webmentions: {
-		link: "https://webmention.io/www.kirillso.com/webmention",
-		pingback: "https://webmention.io/www.kirillso.com/xmlrpc",
 	},
 };
 
@@ -32,19 +28,19 @@ export const siteConfig: SiteConfig = {
 export const menuLinks: Array<{ title: string; path: string }> = [
 	{
 		title: "Home",
-		path: "/",
+		path: "/blog",
 	},
 	{
 		title: "About",
-		path: "/about/",
+		path: "/blog/about/",
 	},
 	{
-		title: "Blog",
-		path: "/posts/",
+		title: "Posts",
+		path: "/blog/posts/",
 	},
 	{
 		title: "Tags",
-		path: "/tags/",
+		path: "/blog/tags/",
 	},
 ];
 

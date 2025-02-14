@@ -12,36 +12,42 @@ const socialLinks: Array<{
 	isWebmention?: boolean;
 }> = [
 	{
-		name: "mdi:github",
-		friendlyName: "Github",
-		link: "https://github.com/kirso",
+		name: "mdi:email",
+		friendlyName: "email",
+		link: "mailto:kgwac34@gmail.com",
+		isWebmention: true,
 	},
 	{
-		name: "mdi:twitter",
-		friendlyName: "twitter",
-		link: "https://x.com/kirso_",
+		name: "mdi:github",
+		friendlyName: "Github",
+		link: "https://github.com/haerang34",
 	},
 	{
 		name: "mdi:linkedin",
-		friendlyName: "LinkedIn",
-		link: "https://linkedin.com/in/kirso_",
+		friendlyName: "Linkedin",
+		link: "https://www.linkedin.com/in/haerang34",
 	},
 	{
-		name: "mdi:post",
-		friendlyName: "Substack",
-		link: "https://substack.com/@kirso",
+		name: "mdi:instagram",
+		friendlyName: "Instagram",
+		link: "https://www.instagram.com/o_ru_rang__",
 	},
 	{
-		name: "mdi:email",
-		friendlyName: "email",
-		link: "mailto:kirill.sofronov@gmail.com",
-		isWebmention: true,
+		name: "mdi:at",
+		friendlyName: "Threads",
+		link: "https://www.threads.net/@o_ru_rang__",
 	},
+	{
+		name: "mdi:youtube",
+		friendlyName: "Youtube",
+		link: "https://www.youtube.com/@orurang",
+	},
+
 ];
 ---
 
 <div class="flex flex-wrap items-end gap-x-4">
-	<p>Find me on</p>
+	<p>My Link:</p>
 	<ul class="flex flex-1 items-center gap-x-2 sm:flex-initial">
 		{
 			socialLinks.map(({ link, name, friendlyName, isWebmention }) => (

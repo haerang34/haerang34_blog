@@ -1,0 +1,39 @@
+---
+import Cards from "../components/Cards.astro";
+
+---
+<section class='mt-10'>
+    <h2 class='title mb-4 text-xl'>Projects</h2>
+    <Cards
+        cards={[
+            {
+                title: "프로젝트1",
+                to: "/posts/20250101-new-blogs",
+                description: "이것은 나의 프로젝트 1 입니다.",
+                gradientFrom: "#6ee7b7",
+                gradientTo: "#9333ea",
+            },
+            {
+                title: "프로젝트2",
+                to: "https://github.com",
+                description: "이것은 나의 프로젝트 2 입니다.",
+                gradientFrom: "#091dd4",
+                gradientTo: "#8f9adc",
+            },
+            {
+                title: "프로젝트3",
+                to: "https://google.com",
+                description: "이것은 나의 프로젝트 3 입니다.",
+                gradientFrom: "#c9d13f",
+                gradientTo: "#f8d8ab",
+            },
+            {
+                title: "프로젝트4",
+                to: "https://chatgpt.com",
+                description: "이것은 나의 프로젝트 4 입니다.",
+                gradientFrom: "#a15",
+                gradientTo: "#F51",
+            },
+        ]}
+    />
+</section>

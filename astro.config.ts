@@ -11,11 +11,17 @@ import { expressiveCodeOptions } from "./src/site.config";
 import svelte from "@astrojs/svelte";
 
 import vercel from "@astrojs/vercel/serverless";
+// import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://www.kirillso.com/",
-	output: "hybrid",
+    site: "https://haerang34.github.io",
+    base: "blog",
+	// output: "hybrid",
+	// adapter: vercel({
+	// 	webAnalytics: { enabled: true },
+	// 	functionPerRoute: false,
+	// }),
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		rehypePlugins: [
@@ -70,8 +76,4 @@ export default defineConfig({
 			},
 		},
 	},
-	adapter: vercel({
-		webAnalytics: { enabled: true },
-		functionPerRoute: false,
-	}),
 });
