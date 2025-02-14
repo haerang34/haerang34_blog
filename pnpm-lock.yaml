@@ -12,8 +12,8 @@ importers:
         specifier: 3.1.2
         version: 3.1.2(astro@4.16.18(@types/node@16.18.11)(rollup@4.34.6)(typescript@5.7.3))
       '@astrojs/rss':
-        specifier: 4.0.7
-        version: 4.0.7
+        specifier: 4.0.11
+        version: 4.0.11
       '@astrojs/sitemap':
         specifier: 3.1.6
         version: 3.1.6
@@ -249,8 +249,8 @@ packages:
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
 
-  '@astrojs/rss@4.0.7':
-    resolution: {integrity: sha512-ZEG55XFB19l+DplUvBISmz04UbjDtKliRO4Y5+ERRhAMjgCVVobEBNE6ZwWG1h6orWUocy4nfPihKXDyB73x9g==}
+  '@astrojs/rss@4.0.11':
+    resolution: {integrity: sha512-3e3H8i6kc97KGnn9iaZBJpIkdoQi8MmR5zH5R+dWsfCM44lLTszOqy1OBfGGxDt56mpQkYVtZJWoxMyWuUZBfw==}
 
   '@astrojs/sitemap@3.1.6':
     resolution: {integrity: sha512-1Qp2NvAzVImqA6y+LubKi1DVhve/hXXgFvB0szxiipzh7BvtuKe4oJJ9dXSqaubaTkt4nMa6dv6RCCAYeB6xaQ==}
@@ -5607,7 +5607,7 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/rss@4.0.7':
+  '@astrojs/rss@4.0.11':
     dependencies:
       fast-xml-parser: 4.5.1
       kleur: 4.1.5
