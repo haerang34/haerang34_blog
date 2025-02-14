@@ -1,0 +1,142 @@
+---
+import PageLayout from "../layouts/Base.astro";
+import PostPreview from "../components/blog/PostPreview.astro";
+import SocialList from "../components/SocialList.astro";
+import { getAllPosts, sortMDByDate } from "@/utils";
+import Cards from "../components/Cards.astro";
+import ChatPopup from "@/components/ChatPopup.svelte";
+
+const MAX_POSTS = 10;
+const allPosts = await getAllPosts();
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+
+const cactusTech: Array<{ title: string; desc: string; href: string }> = [
+	{
+		title: "Astro",
+		desc: "Build fast websites, faster.",
+		href: "https://astro.build",
+	},
+	{
+		title: "Tailwind CSS",
+		desc: "Rapidly build modern websites without ever leaving your HTML.",
+		href: "https://tailwindcss.com",
+	},
+	{
+		title: "Markdown",
+		desc: "Simple and easy-to-use markup language.",
+		href: "https://www.markdownguide.org/",
+	},
+	{
+		title: "MDX",
+		desc: "Markdown for the component era.",
+		href: "https://mdxjs.com/",
+	},
+	{
+		title: "Satori",
+		desc: "Generating png Open Graph images for blog posts.",
+		href: "https://github.com/vercel/satori",
+	},
+	{
+		title: "Pagefind",
+		desc: "A fully static search library.",
+		href: "https://pagefind.app/",
+	},
+	{
+		title: "Astro Icon",
+		desc: "An easy to use Icon component for Astro.",
+		href: "https://github.com/natemoo-re/astro-icon#readme",
+	},
+	{
+		title: "Expressive Code",
+		desc: "Highly customisable source code & syntax highlighter",
+		href: "https://expressive-code.com/",
+	},
+];
+---
+
+<PageLayout meta={{ title: "Home" }}>
+	<!-- description for meta is handled via site.config.ts -->
+	<section>
+		<h1 class='title mb-4 text-xl'>Hey, I'm Kirill So 👋🏻</h1>
+		<p class='mb-4'>
+			I’m a principal product manager based in Singapore. Previously, I co-founded a startup and ran
+			a <a href='https://www.huffpost.com/entry/what-to-do-about-fraud-in_b_5809200'
+				>profitable agency</a
+			>. During nights & weekends I prototype MVPs, learning new things and write essays.
+			<a href='https://twitter.com/kirso_'>DMs</a> are always open, so as <a
+				href='https://cal.com/kirso'>coffee chats</a
+			>.
+		</p>
+		<SocialList />
+	</section>
+	<section aria-label='Blog post list' class='mt-10'>
+		<h2 class='title mb-4 text-xl'>Posts</h2>
+		<ul class='space-y-4'>
+			{
+				allPostsByDate.map((p) => (
+					<li class='flex flex-col gap-x-2 sm:flex-row'>
+						<PostPreview post={p} />
+					</li>
+				))
+			}
+		</ul>
+	</section>
+	<section class='mt-10'>
+		<h2 class='title mb-4 text-xl'>Projects</h2>
+		<Cards
+			cards={[
+				{
+					title: "Google clone",
+					to: "/posts/google-clone/",
+					description: "Search with Google API",
+					gradientFrom: "#818cf8",
+					gradientTo: "#d8b4fe",
+				},
+				{
+					title: "Panic theme",
+					to: "https://github.com/kirso/logseq-panic-theme",
+					description: "Make Logseq PKM pretty",
+					gradientFrom: "#fde68a",
+					gradientTo: "#fca5a5",
+				},
+				{
+					title: "Schwiftyverse",
+					to: "https://schwiftyverse.vercel.app/",
+					description: "GIFs on Solana blockchain",
+					gradientFrom: "#6ee7b7",
+					gradientTo: "#9333ea",
+				},
+				{
+					title: "ToDo",
+					to: "https://github.com/kirso/bun-elysia-tailwind-htmx-todo-app",
+					description: "Tasks on the edge",
+					gradientFrom: "#a15",
+					gradientTo: "#F51",
+				},
+			]}
+		/>
+	</section>
+	<section class='mt-10'>
+		<h2 class='title mb-4 text-xl'>Tech</h2>
+		<dl class='space-y-4'>
+			{
+				cactusTech.map(({ href, title, desc }) => (
+					<div class='flex flex-col gap-2 md:flex-row'>
+						<dt>
+							<span class='flex'>
+								<a href={href} target='_blank' rel='noopener noreferrer' class='cactus-link'>
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
+	<section>
+		<ChatPopup client:load />
+	</section>
+</PageLayout>
